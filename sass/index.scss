@@ -1,0 +1,244 @@
+@use "./mixin-media" as *;
+@use "./mixins-variable" as *;
+@use "./functions" as *;
+@use "./header" as *;
+@use "./search" as *;
+@use "./login" as *;
+@use "./sectionOne" as *;
+@use "./section-one" as *;
+@use "./featured-books" as *;
+@use "./section-cart" as *;
+
+* {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #ebeeff;
+}
+
+:root {
+  --background-color: #ebeeff;
+  --navbar-back: #eff2fff7;
+  --icon-open: #646464;
+  --link-color: #646464;
+  --h1-color: #4960d4;
+  --icon-color: #646464;
+  --div-navbar: #000000c4;
+  --main-one: #f0f2ff9c;
+  --main-border: #c6cbef9c;
+  --main-color: #767676cd;
+  --search-color: #ffffff2b;
+  --main-icon: #959595;
+  --li-background: #f0f2ff82;
+  --li-border: #dadada;
+  --love-icon: #7c7c7c;
+  --love-background: #f0f2ffed;
+  --show-product: #e9ebf6e3;
+  --para-show: #555555cf;
+  --header: #dcdff396;
+  --title-total: #333333ab;
+  --span-total: #454545;
+
+  &.active {
+    --background-color: #151515;
+    --navbar-back: #272727;
+    --icon-open: #edededeb;
+    --link-color: #c8c8c8;
+    --h1-color: #4a62dc;
+    --icon-color: #c8c8c8;
+    --div-navbar: #0000004f;
+    --main-one: #0e0e0ea6;
+    --main-icon: #a2a2a2;
+    --main-border: #56565647;
+    --search-color: #2e2e2e3b;
+    --main-color: #9f9c9cc8;
+    --li-background: #1f1f1fe3;
+    --li-border: #343434;
+    --love-icon: #646464;
+    --love-background: #222222ed;
+    --show-product: #242424eb;
+    --para-show: #fefefe8a;
+    --header: #1b1c1e96;
+    --span-total: white;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+
+  .button-top {
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+
+    .btn {
+      background-color: #4a61d9f0;
+      border: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      width: 27px;
+      height: 27px;
+      border-radius: 4px;
+      cursor: pointer;
+      transform: translateX(160%);
+      opacity: 0;
+      transition-duration: 0.4s;
+
+      &.active {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+
+      &:hover {
+        background-color: #4a61d9;
+      }
+    }
+  }
+}
+
+@include parent(medium) {
+  header {
+    .header {
+      @include productFour();
+    }
+  }
+}
+
+@include parent(XMedium) {
+  header {
+    .header {
+      @include productFive();
+    }
+  }
+}
+
+@include parent(mobile) {
+  header {
+    .header {
+      @include productSex();
+    }
+  }
+}
+
+@include parent(tablet) {
+  header {
+    .header {
+      @include productSeven();
+    }
+  }
+
+  .main-one {
+    .search-div {
+      .container {
+        .input {
+          input {
+            width: 338px;
+            height: 37px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// scrollbar
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4a62dc;
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@include parent(lap) {
+  header {
+    .header {
+      @include productOne();
+
+      .list-navbar {
+        display: none;
+      }
+
+      .navbar {
+        justify-content: center;
+        align-items: center;
+        position: unset;
+        background-color: transparent;
+        height: unset;
+        width: unset;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        transform: translateX(0);
+        max-width: unset;
+
+        .person {
+          justify-content: center;
+          padding-block: 0;
+        }
+
+        .logo,
+        .btn-close {
+          display: none;
+        }
+
+        .navbar-list {
+          padding-inline: 0;
+          display: flex;
+          flex-direction: row;
+        }
+
+        .icons {
+          margin-bottom: 0;
+          flex-direction: row;
+          gap: 25px;
+        }
+      }
+    }
+  }
+}
+
+@include parent(laptop) {
+  header {
+    .header {
+      @include productTwo();
+    }
+  }
+
+  body {
+    .loved-products {
+      .container {
+        .loved-product {
+          max-width: 296px;
+        }
+      }
+    }
+  }
+}
+
+@include parent(large) {
+  header {
+    .header {
+      padding-inline: productThree(150px);
+    }
+  }
+}

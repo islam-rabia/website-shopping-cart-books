@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "img": "img/book-1.png"
+  },
+  {
+    "id": 2,
+    "img": "img/book-3.png"
+  },
+  {
+    "id": 3,
+    "img": "img/book-5.png"
+  },
+  {
+    "id": 4,
+    "img": "img/book-7.png"
+  },
+  {
+    "id": 5,
+    "img": "img/book-9.png"
+  },
+  {
+    "id": 6,
+    "img": "img/book-2.png"
+  },
+  {
+    "id": 7,
+    "img": "img/book-4.png"
+  },
+  {
+    "id": 8,
+    "img": "img/book-6.png"
+  },
+  {
+    "id": 9,
+    "img": "img/book-8.png"
+  },
+  {
+    "id": 10,
+    "img": "img/book-10.png"
+  }
+]

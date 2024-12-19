@@ -1,0 +1,9 @@
+.message {
+  li {
+    width: 149px;
+
+    ion-icon {
+      background-color: red;
+    }
+  }
+}

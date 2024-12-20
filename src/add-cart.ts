@@ -4,7 +4,7 @@ import { saveDataInLocalStorage } from "./save-data-localStorage.js";
 let dataCart: any;
 let dataIndex: any;
 async function generateData() {
-  let result = await fetch("http://localhost:3000/products");
+  let result = await fetch("data/data-feature-books.json");
   let data = await result.json();
   dataCart = data;
   data.map((index: any) => (dataIndex = index));

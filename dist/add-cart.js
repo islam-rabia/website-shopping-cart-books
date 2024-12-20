@@ -13,7 +13,7 @@ let dataCart;
 let dataIndex;
 function generateData() {
     return __awaiter(this, void 0, void 0, function* () {
-        let result = yield fetch("http://localhost:3000/products");
+        let result = yield fetch("data/data-feature-books.json");
         let data = yield result.json();
         dataCart = data;
         data.map((index) => (dataIndex = index));

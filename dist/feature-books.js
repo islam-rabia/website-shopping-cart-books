@@ -4,7 +4,7 @@ import { saveDataInLocalStorage } from "./save-data-localStorage.js";
 let wishContainer;
 function generateData() {
     let result = new XMLHttpRequest();
-    result.open("GET", "http://localhost:3000/products");
+    result.open("GET", "data/data-feature-books.json");
     result.responseType = "json";
     result.send();
     result.onload = () => {
